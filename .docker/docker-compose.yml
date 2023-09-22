@@ -1,6 +1,6 @@
 version: '3'
 services:
-    music-backend:
+    rust:
         container_name: rust-practice
         image: rust-practice
         env_file:
@@ -24,6 +24,5 @@ services:
             - ../db/:/var/lib/postgresql/data
         ports: 
             - "5432:5432"
-        environment:
-        POSTGRES_USER: "goemon"
-        POSTGRES_PASSWORD: "password"
+        env_file:
+            - .env
