@@ -18,7 +18,9 @@ services:
 
     db:
         container_name: rust-db
-        build: db/Dockerfile
+        build: 
+            context: .
+            dockerfile: db/Dockerfile
         restart: always
         volumes:
             - ../db/:/var/lib/postgresql/data
